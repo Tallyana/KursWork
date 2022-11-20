@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Сумма зарплат всех сотрудников - " + sumSalaries());
         System.out.println("Сотрудник с минимальной зарплатой. " + minSalary());
         System.out.println("Сотрудник с максимальной зарплатой. " + maxSalary());
-        System.out.println("Средняя зарплата сотрудника  " + maxSalary());
+        System.out.println("Средняя зарплата сотрудника  " + averageSalaries());
     }
 
     public static void printArray() {
@@ -56,12 +56,9 @@ public class Main {
         int counterKolichvo = 0;
         for (int i = 0; i < employees.length; i++)
             if (employees[i] != null) {
-                employees++;
+                counterKolichvo++;
             }
-    }
-        return
-
-    sumSalaries()/counterKolichvo;
+        return sumSalaries()/counterKolichvo;
 }
 }
 
