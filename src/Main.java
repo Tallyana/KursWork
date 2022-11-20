@@ -8,6 +8,9 @@ public class Main {
         employees[2] = new Employees("Петров Валентин Васильевич ", "Первый", 22700.0);
         printArray();
         System.out.println("Сумма зарплат всех сотрудников - " + sumSalaries());
+        System.out.println("Сотрудник с минимальной зарплатой. " + minSalary());
+        System.out.println("Сотрудник с максимальной зарплатой. " + maxSalary());
+        System.out.println("Средняя зарплата сотрудника  " + maxSalary());
     }
 
     public static void printArray() {
@@ -25,6 +28,40 @@ public class Main {
             }
         return summa;
     }
-}
 
+
+    public static Employees minSalary() {
+        Employees summa = employees[0];
+        double min = Double.POSITIVE_INFINITY;
+        for (int i = 0; i < employees.length; i++)
+            if (employees[i] != null && employees[i].getSalary() < min) {
+                min = employees[i].getSalary();
+                summa = employees[i];
+            }
+        return summa;
+    }
+
+    public static Employees maxSalary() {
+        Employees summa = employees[0];
+        double max = Double.NEGATIVE_INFINITY;
+        for (int i = 0; i < employees.length; i++)
+            if (employees[i] != null && employees[i].getSalary() > max) {
+                max = employees[i].getSalary();
+                summa = employees[i];
+            }
+        return summa;
+    }
+
+    public static double averageSalaries() {
+        int counterKolichvo = 0;
+        for (int i = 0; i < employees.length; i++)
+            if (employees[i] != null) {
+                employees++;
+            }
+    }
+        return
+
+    sumSalaries()/counterKolichvo;
+}
+}
 
