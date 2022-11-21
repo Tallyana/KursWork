@@ -10,7 +10,10 @@ public class Main {
         System.out.println("Сумма зарплат всех сотрудников - " + sumSalaries());
         System.out.println("Сотрудник с минимальной зарплатой. " + minSalary());
         System.out.println("Сотрудник с максимальной зарплатой. " + maxSalary());
-        System.out.println("Средняя зарплата сотрудника  " + averageSalaries());
+        System.out.printf("Средняя зарплата сотрудников:%.2f\n ", averageSalaries());
+        printFullName();
+        deleteEmployees("Сидоров Олег Иванович");
+        printArray();
     }
 
     public static void printArray() {
@@ -58,7 +61,25 @@ public class Main {
             if (employees[i] != null) {
                 counterKolichvo++;
             }
-        return sumSalaries()/counterKolichvo;
+        return sumSalaries() / counterKolichvo;
+    }
+
+    public static void printFullName() {
+        for (int i = 0; i < employees.length; i++)
+            if (employees[i] != null) {
+                System.out.println(employees[i].getFullName());
+            }
+    }
+
+    public static boolean deleteEmployees(String fullName) {
+        for (int i = 0; i < employees.length; i++)
+            if (employees[i] != null && employees[i].getFullName().equals(fullName)) {
+                employees[i] = null;
+                return true;
+            }
+        return false;
+    }
 }
-}
+
+
 
